@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offerwall Site</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px 0;
+      font-size: 24px;
+    }
+    #offerwall-container {
+      margin: 20px auto;
+      width: 90%;
+      max-width: 800px;
+      min-height: 600px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Earn Rewards by Completing Offers
+</header>
+
+<div id="offerwall-container">
+  <!-- Offerwall will load here -->
+</div>
+
+<!-- AdGate Media Offerwall Script -->
+<script type="text/javascript">
+  (function(){
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    // Replace 'YOUR_SITE_ID' with the actual ID from AdGate Media
+    s.src = 'https://cdn.adgatemedia.com/adgate/media/js/offerwall.js?sid=YOUR_SITE_ID';
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+
+    // Optional: automatically render the offerwall
+    s.onload = function() {
+      if(window.ADGATE) {
+        ADGATE.renderOfferwall({
+          container: 'offerwall-container'
+        });
+      }
+    };
+  })();
+</script>
+
+</body>
+</html>
